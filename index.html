@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation Company in Sacramento | SimpleTen</title>
+<meta name="description" content="SimpleTen is the AI automation company for Sacramento small businesses. We design and implement practical AI workflows in the tools you already use—led by Jesse Delgado, Sacramento Chapter Lead of the AI Collective and n8n Ambassador.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Surfaces — slate near-black */
+    --bg:#020617;          /* slate-950 base */
+    --bg-2:#0b1120;        /* elevated section */
+    --surface:#0f172a;     /* slate-900 cards */
+    --surface-2:#131f38;   /* card hover */
+    --border:#1e293b;      /* slate-800 */
+    --border-2:#334155;    /* slate-700 */
+    /* Teal accent (brand) */
+    --teal:#14b8a6;        /* teal-500 — primary */
+    --teal-400:#2dd4bf;    /* links / highlights */
+    --teal-300:#5eead4;    /* lightest */
+    --teal-700:#0f766e;
+    --teal-950:#042f2e;
+    /* Support accents */
+    --emerald:#10b981;
+    --cyan:#06b6d4;
+    --indigo:#6366f1;      /* indigo-500 — sparse */
+    /* Text */
+    --white:#f8fafc;       /* slate-50 headings */
+    --ink:#e2e8f0;         /* slate-200 */
+    --body:#94a3b8;        /* slate-400 */
+    --muted:#64748b;       /* slate-500 */
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--body);
+    font-weight:460;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{text-decoration:none;color:inherit}
+  ::selection{background:var(--teal);color:#022c22}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+
+  h1,h2,h3{color:var(--white);font-weight:540}
+  .eyebrow{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--teal-400);text-transform:uppercase}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:inherit;font-size:16px;font-weight:600;
+    padding:13px 24px;border-radius:8px;cursor:pointer;border:none;
+    transition:filter .15s ease,transform .15s ease,background .15s ease,border-color .15s,box-shadow .15s;
+    white-space:nowrap;line-height:1;
+  }
+  .btn-teal{background:var(--teal);color:#022c22;box-shadow:0 8px 24px -10px rgba(20,184,166,.7)}
+  .btn-teal:hover{background:var(--teal-400);transform:translateY(-1px);box-shadow:0 12px 30px -8px rgba(20,184,166,.75)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--border-2)}
+  .btn-ghost:hover{border-color:var(--teal);color:#fff}
+  .btn .arw{transition:transform .15s ease}
+  .btn:hover .arw{transform:translateX(3px)}
+
+  /* ---------- Nav ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
+  header.scrolled{background:rgba(2,6,23,.72);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:600;letter-spacing:-.01em;color:#fff}
+  .logo .mark{width:30px;height:30px;border-radius:8px;flex-shrink:0;background:var(--teal);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px -3px rgba(20,184,166,.6)}
+  .logo .mark span{color:#022c22;font-weight:700;font-size:15px}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-size:16px;font-weight:460;color:var(--ink);transition:color .2s}
+  .nav-links a:hover{color:var(--teal-400)}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .nav-cta .signin{font-size:16px;font-weight:460;color:var(--ink)}
+  .nav-cta .signin:hover{color:var(--teal-400)}
+  .nav-cta .btn{padding:10px 20px;font-size:15px}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.2s}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;padding:184px 0 130px;
+    background:
+      radial-gradient(ellipse 82% 58% at 50% -4%, rgba(6,182,212,.16) 0%, transparent 60%),
+      radial-gradient(circle 620px at 50% 330px, rgba(16,185,129,.20) 0%, transparent 62%),
+      radial-gradient(58% 60% at 86% 18%, rgba(20,184,166,.14) 0%, transparent 60%),
+      var(--bg);
+  }
+  .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(20,184,166,.35),transparent)}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:28px}
+  .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-400);box-shadow:0 0 14px 1px rgba(45,212,191,.9)}
+  .hero-eyebrow span{font-size:15px;font-weight:460;color:var(--ink)}
+  .hero h1{font-size:66px;line-height:.96;letter-spacing:-1.6px;font-weight:540;color:#fff;margin-bottom:26px}
+  .hero h1 .lav{background:linear-gradient(100deg,var(--teal-300),var(--teal-400) 45%,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.sub{font-size:20px;line-height:1.5;font-weight:460;color:var(--body);max-width:520px;margin-bottom:38px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .hero-note{font-size:15px;font-weight:460;color:var(--muted);display:flex;align-items:center;gap:8px;line-height:1.5}
+  .hero-note b{font-weight:600;color:var(--ink)}
+
+  /* Workflow product card */
+  .flowcard{
+    background:linear-gradient(180deg,#0c1626,#0a1220);
+    border:1px solid var(--border);border-radius:16px;overflow:hidden;
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(20,184,166,.06), 0 0 60px -20px rgba(20,184,166,.25);
+  }
+  .flowcard-top{display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid var(--border)}
+  .flowcard-top .dots{display:flex;gap:7px}
+  .flowcard-top .dots i{width:10px;height:10px;border-radius:50%;display:block;background:var(--border-2)}
+  .flowcard-top .title{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:-.2px}
+  .flowcard-body{padding:24px 22px}
+  .flow-node{display:flex;align-items:center;gap:13px;padding:14px 16px;border:1px solid var(--border);border-radius:16px;background:rgba(148,163,184,.03);position:relative}
+  .flow-node + .flow-node{margin-top:28px}
+  .flow-node:before{content:"";position:absolute;left:29px;top:-28px;width:2px;height:28px;background:linear-gradient(var(--teal-700),var(--teal))}
+  .flow-node:first-child:before{display:none}
+  .flow-node .ico{width:32px;height:32px;border-radius:8px;flex-shrink:0;background:rgba(20,184,166,.15);color:var(--teal-300);display:flex;align-items:center;justify-content:center;border:1px solid rgba(20,184,166,.25)}
+  .flow-node .ico svg{width:16px;height:16px}
+  .flow-node .meta{flex:1;min-width:0}
+  .flow-node .meta .n{font-size:14px;font-weight:600;color:var(--white)}
+  .flow-node .meta .d{font-size:13px;font-weight:460;color:var(--muted);margin-top:1px}
+  .flow-node .badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;letter-spacing:.02em;background:rgba(45,212,191,.14);color:var(--teal-300);border:1px solid rgba(45,212,191,.25)}
+
+  /* ---------- Section base ---------- */
+  section{padding:104px 0}
+  .sec-head{max-width:680px;margin-bottom:60px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:48px;line-height:1.0;letter-spacing:-1.32px;font-weight:460;margin:18px 0 20px;color:#fff}
+  .sec-head p{font-size:19px;font-weight:460;color:var(--body);line-height:1.5}
+
+  /* ---------- Answer block ---------- */
+  .answer{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .answer .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+  .answer .q{font-size:34px;font-weight:460;letter-spacing:-.9px;line-height:1.05;color:#fff}
+  .answer .q .bar{display:block;width:48px;height:4px;border-radius:8px;background:var(--teal);margin-bottom:24px}
+  .answer .a{font-size:22px;font-weight:460;line-height:1.5;color:var(--ink)}
+  .answer .a b{font-weight:600;color:#fff}
+
+  /* ---------- Cards grid ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .fcard{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px 30px;transition:border-color .2s ease,transform .2s ease,box-shadow .2s}
+  .fcard:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 20px 50px -24px rgba(20,184,166,.45)}
+  .fcard .mk{width:12px;height:12px;border-radius:8px;background:var(--teal);margin-bottom:22px;box-shadow:0 0 12px 1px rgba(20,184,166,.6)}
+  .fcard h3{font-size:21px;font-weight:540;letter-spacing:-.4px;line-height:1.1;margin-bottom:11px;color:#fff}
+  .fcard p{font-size:16px;font-weight:460;color:var(--body);line-height:1.5}
+
+  /* ---------- Services ---------- */
+  .services{position:relative;overflow:hidden;background:
+    radial-gradient(70% 70% at 18% -6%, rgba(20,184,166,.12) 0%, transparent 60%),
+    radial-gradient(60% 60% at 100% 100%, rgba(99,102,241,.10) 0%, transparent 60%),
+    var(--bg-2);
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .services .wrap{position:relative;z-index:1}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+  .svc{background:var(--bg);padding:38px 34px;display:flex;gap:22px;transition:background .2s ease}
+  .svc:hover{background:var(--surface)}
+  .svc:last-child{grid-column:1/-1}
+  .svc .num{font-size:15px;font-weight:700;color:var(--teal-400);flex-shrink:0;padding-top:5px;letter-spacing:.02em}
+  .svc h3{font-size:22px;font-weight:540;letter-spacing:-.5px;line-height:1.1;margin-bottom:11px;color:#fff;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+  .svc h3 .tag{font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:3px 9px;border-radius:8px;background:var(--teal);color:#022c22}
+  .svc p{font-size:16px;font-weight:460;color:var(--body);line-height:1.55}
+  .svc .lnk{display:inline-flex;align-items:center;gap:7px;margin-top:15px;font-size:15px;font-weight:600;color:var(--teal-400)}
+  .svc .lnk .arw{transition:transform .15s}
+  .svc:hover .lnk .arw{transform:translateX(3px)}
+
+  /* ---------- Process ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;counter-reset:step}
+  .step{position:relative}
+  .step .top{height:3px;background:var(--border);border-radius:8px;margin-bottom:26px;position:relative}
+  .step .top:after{content:"";position:absolute;left:0;top:0;width:40px;height:3px;background:var(--teal);border-radius:8px;box-shadow:0 0 12px 0 rgba(20,184,166,.6)}
+  .step .num{counter-increment:step;font-size:15px;font-weight:700;color:var(--teal-400);letter-spacing:.02em}
+  .step .num:before{content:"0" counter(step)}
+  .step h3{font-size:23px;font-weight:540;letter-spacing:-.5px;line-height:1.1;margin:12px 0 12px;color:#fff}
+  .step p{font-size:16px;font-weight:460;color:var(--body);line-height:1.55}
+
+  /* ---------- Authority ---------- */
+  .authority{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .authority .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .authority h2{font-size:46px;letter-spacing:-1.3px;line-height:1.0;font-weight:460;margin:18px 0 22px;color:#fff}
+  .authority p.lead{font-size:19px;font-weight:460;color:var(--body);line-height:1.55;margin-bottom:30px}
+  .authority p.lead b{color:#fff;font-weight:600}
+  .authority .aside-cta a{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:var(--teal-400);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+  .authority .aside-cta a:hover{color:var(--teal-300)}
+  .creds{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .creds li{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;transition:border-color .2s}
+  .creds li:hover{border-color:var(--teal)}
+  .creds li .ck{width:26px;height:26px;border-radius:8px;flex-shrink:0;margin-top:1px;background:var(--teal);display:flex;align-items:center;justify-content:center}
+  .creds li .ck svg{width:14px;height:14px}
+  .creds li div .t{font-size:16px;font-weight:600;color:var(--white);line-height:1.3}
+  .creds li div .s{font-size:14px;font-weight:460;color:var(--muted);margin-top:3px}
+
+  /* ---------- Outcomes ---------- */
+  .outcomes{border-top:1px solid var(--border)}
+  .out-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .out{border:1px solid var(--border);border-radius:16px;padding:28px 26px;background:var(--surface);transition:border-color .2s,transform .2s,box-shadow .2s}
+  .out:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 18px 44px -24px rgba(20,184,166,.45)}
+  .out .ck{width:34px;height:34px;border-radius:8px;background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.3);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .out .ck svg{width:17px;height:17px;color:var(--teal-300)}
+  .out p{font-size:16px;font-weight:540;color:var(--ink);line-height:1.35}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .faq-list{max-width:860px;margin:0 auto;border-top:1px solid var(--border)}
+  .faq-item{border-bottom:1px solid var(--border)}
+  .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:30px 4px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:inherit;font-size:21px;font-weight:540;color:var(--white);letter-spacing:-.4px;line-height:1.2}
+  .faq-q:hover{color:var(--teal-400)}
+  .faq-q .pm{width:24px;height:24px;flex-shrink:0;position:relative}
+  .faq-q .pm:before,.faq-q .pm:after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--teal-400);border-radius:8px}
+  .faq-q .pm:before{width:15px;height:2px}
+  .faq-q .pm:after{width:2px;height:15px;transition:transform .25s ease}
+  .faq-item.open .pm:after{transform:translate(-50%,-50%) scaleY(0)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-a p{font-size:17px;font-weight:460;color:var(--body);line-height:1.6;padding:0 4px 30px;max-width:760px}
+
+  /* ---------- Final CTA ---------- */
+  .final{
+    color:#fff;position:relative;overflow:hidden;text-align:center;
+    background:
+      radial-gradient(58% 80% at 50% 2%, rgba(20,184,166,.24) 0%, transparent 60%),
+      radial-gradient(46% 70% at 82% 100%, rgba(16,185,129,.18) 0%, transparent 62%),
+      radial-gradient(46% 70% at 14% 90%, rgba(6,182,212,.14) 0%, transparent 62%),
+      var(--bg);
+    padding:130px 0;border-top:1px solid var(--border)}
+  .final .wrap{position:relative;z-index:1;max-width:760px}
+  .final .eyebrow{color:var(--teal-400)}
+  .final h2{color:#fff;font-size:56px;letter-spacing:-1.6px;line-height:.98;font-weight:540;margin:20px 0 22px}
+  .final p{font-size:20px;font-weight:460;color:var(--body);line-height:1.5;margin-bottom:40px}
+  .final-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- Footer ---------- */
+  footer{background:#010207;padding:64px 0 44px;border-top:1px solid var(--border)}
+  .foot-top{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid var(--border)}
+  .foot-brand{max-width:360px}
+  .foot-brand .logo{color:#fff;margin-bottom:16px}
+  .foot-brand p{font-size:15px;font-weight:460;color:var(--body);line-height:1.55}
+  .foot-brand .partner{margin-top:16px;font-size:14px;font-weight:460;color:var(--teal-400);font-style:italic}
+  .foot-nap{display:flex;flex-direction:column;gap:9px}
+  .foot-nap .lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--teal-400);margin-bottom:5px}
+  .foot-nap span{font-size:15px;font-weight:460;color:var(--body)}
+  .foot-nap span b{font-weight:600;color:var(--ink)}
+  .foot-bot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px}
+  .foot-bot p{font-size:14px;font-weight:460;color:var(--muted)}
+  .foot-bot .region{font-size:14px;font-weight:460;color:var(--muted);max-width:540px;text-align:right}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:960px){
+    .hero .wrap{grid-template-columns:1fr;gap:52px}
+    .hero{padding:150px 0 90px}
+    .hero h1{font-size:52px}
+    .answer .wrap{grid-template-columns:1fr;gap:26px}
+    .authority .wrap{grid-template-columns:1fr;gap:44px}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .out-grid{grid-template-columns:1fr 1fr}
+    .sec-head h2{font-size:40px}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 22px}
+    .nav-links,.nav-cta{display:none}
+    .menu-toggle{display:block}
+    section{padding:72px 0}
+    .hero{padding:130px 0 76px}
+    .hero h1{font-size:40px;letter-spacing:-1px}
+    .hero p.sub{font-size:18px}
+    .sec-head h2{font-size:33px;letter-spacing:-.8px}
+    .answer .q{font-size:28px}
+    .answer .a{font-size:19px}
+    .final h2{font-size:38px;letter-spacing:-1px}
+    .grid-3,.svc-grid,.steps,.out-grid{grid-template-columns:1fr}
+    .svc:last-child{grid-column:auto}
+    .foot-bot .region{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="nav">
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo"><span class="mark"><span>S</span></span>SimpleTen</a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#authority">Why SimpleTen</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="signin">Book a call</a>
+        <a href="#final" class="btn btn-teal">Get your AI plan <span class="arw">→</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><span class="dot"></span><span>AI Automation Company · Sacramento, California</span></div>
+      <h1>AI automation<br>for Sacramento,<br><span class="lav">built to run.</span></h1>
+      <p class="sub">SimpleTen designs and builds practical AI workflows for Sacramento small businesses—automating the busywork so your team moves faster, follows up sooner, and captures more revenue, without hiring a tech department.</p>
+      <div class="hero-actions">
+        <a href="#final" class="btn btn-teal">Get Your Sacramento AI Workflow Plan <span class="arw">→</span></a>
+        <a href="#" class="btn btn-ghost">Book a 20-Minute Discovery Call</a>
+      </div>
+      <div class="hero-note"><b>Led by Jesse Delgado</b>&nbsp;— Sacramento Chapter Lead of the AI Collective &amp; n8n Ambassador.</div>
+    </div>
+
+    <div class="flowcard">
+      <div class="flowcard-top">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="title">missed-call-recovery.n8n</div>
+      </div>
+      <div class="flowcard-body">
+        <div class="flow-node">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="meta"><div class="n">Missed call detected</div><div class="d">Trigger · phone system</div></div>
+          <span class="badge">LIVE</span>
+        </div>
+        <div class="flow-node">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3v1a3 3 0 0 0 6 0v-1a3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3V5a3 3 0 0 0-3-3z"/></svg></div>
+          <div class="meta"><div class="n">AI qualifies &amp; drafts reply</div><div class="d">Claude · intent + urgency</div></div>
+          <span class="badge">0.8s</span>
+        </div>
+        <div class="flow-node">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+          <div class="meta"><div class="n">Lead logged &amp; assigned</div><div class="d">CRM · owner notified</div></div>
+          <span class="badge">DONE</span>
+        </div>
+        <div class="flow-node">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <div class="meta"><div class="n">Text sent in 60 seconds</div><div class="d">SMS · human-approved template</div></div>
+          <span class="badge">SENT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANSWER BLOCK ============ -->
+<section class="answer">
+  <div class="wrap">
+    <div class="q"><span class="bar"></span>What is SimpleTen?</div>
+    <div class="a"><b>SimpleTen is a Sacramento-based AI automation company</b> that helps small businesses design, build, and maintain AI workflows across operations, marketing, and revenue. We work inside the tools you already use, with clear safeguards and human oversight, so adopting AI feels like a straightforward upgrade rather than a risky experiment.</div>
+  </div>
+</section>
+
+<!-- ============ WHO WE SERVE ============ -->
+<section id="serve">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Who we serve</div>
+      <h2>Built for Sacramento businesses, not Silicon Valley demos</h2>
+      <p>We work with Sacramento-area service businesses—home services, professional practices, real estate teams, clinics, agencies, and local nonprofits—that grow through calls, forms, and referrals. Instead of generic "AI" promises, we build specific workflows around how your business actually runs.</p>
+    </div>
+    <div class="grid-3">
+      <div class="fcard">
+        <div class="mk"></div>
+        <h3>Operations &amp; team workflows</h3>
+        <p>Intake, routing, scheduling, and internal updates that stop piling up on your team.</p>
+      </div>
+      <div class="fcard">
+        <div class="mk"></div>
+        <h3>Revenue &amp; lead workflows</h3>
+        <p>Capture, qualify, and follow up on every lead automatically—so nothing slips through.</p>
+      </div>
+      <div class="fcard">
+        <div class="mk"></div>
+        <h3>Customer experience</h3>
+        <p>Reminders, follow-ups, and support triage that keep clients informed on your busiest days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Core services</div>
+      <h2>AI automation services in Sacramento</h2>
+      <p>Every engagement starts with a practical discovery process. Then we design AI and automation workflows mapped to your goals, systems, and risk tolerance.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="num"></div>
+        <div>
+          <h3>AI Workflow Automation</h3>
+          <p>Streamline day-to-day operations with AI-driven task routing, automated follow-up for missed calls, and dashboards that show owners what's happening in real time—across the CRM, inbox, and chat tools you already use.</p>
+          <a href="#" class="lnk">Explore workflow automation <span class="arw">→</span></a>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="num"></div>
+        <div>
+          <h3>AI Lead Generation</h3>
+          <p>Missed leads and slow follow-up cost Sacramento businesses thousands every year. We build workflows that capture leads from calls, forms, and messages, then qualify, nurture, and route them automatically—so your team closes more without living in spreadsheets.</p>
+          <a href="#" class="lnk">Explore lead generation <span class="arw">→</span></a>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="num"></div>
+        <div>
+          <h3>AI Agents &amp; Chatbots</h3>
+          <p>AI agents that handle intake, FAQs, appointment setting, and follow-up on your website and channels—responsive and professional even when your team is slammed.</p>
+          <a href="#" class="lnk">Explore AI agents <span class="arw">→</span></a>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="num"></div>
+        <div>
+          <h3>n8n Automation <span class="tag">Ambassador</span></h3>
+          <p>As an n8n Ambassador, Jesse builds robust, self-hosted automation systems that connect your entire stack—deterministic execution where you need reliability, AI judgment where you need reasoning.</p>
+          <a href="#" class="lnk">Explore n8n automation <span class="arw">→</span></a>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="num"></div>
+        <div>
+          <h3>AI Consulting &amp; Strategy</h3>
+          <p>Not sure where to start? We map where AI saves time, reduces errors, and protects your reputation, then hand you a prioritized plan of quick wins and longer-term upgrades.</p>
+          <a href="#" class="lnk">Explore consulting &amp; strategy <span class="arw">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">How it works</div>
+      <h2>The SimpleTen AI Modernization Plan</h2>
+      <p>A clear, low-risk path from "we should probably use AI" to workflows running quietly in the background.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="top"></div>
+        <div class="num"></div>
+        <h3>Discover &amp; Map</h3>
+        <p>We interview your team, review your tools, and map where AI and automation create the most value. You get a prioritized plan with quick-win automations and longer-term workflow upgrades.</p>
+      </div>
+      <div class="step">
+        <div class="top"></div>
+        <div class="num"></div>
+        <h3>Build &amp; Test</h3>
+        <p>We implement AI agents and workflows in your environment—with safeguards, human oversight, and rollback options—so you see exactly how each one behaves before it goes live.</p>
+      </div>
+      <div class="step">
+        <div class="top"></div>
+        <div class="num"></div>
+        <h3>Optimize &amp; Support</h3>
+        <p>As your business and tools evolve, we refine triggers, tune prompts, and keep your systems aligned with how your team actually works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTHORITY ============ -->
+<section id="authority" class="authority">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Why SimpleTen</div>
+      <h2>The name Sacramento already trusts on AI</h2>
+      <p class="lead">SimpleTen isn't a generic agency that added "AI" to its homepage. When you work with us, you're working with <b>the practitioner brand powering Sacramento's AI community</b>—not a vendor reselling tools.</p>
+      <div class="aside-cta"><a href="#">See upcoming AI Collective Sacramento events →</a></div>
+    </div>
+    <ul class="creds">
+      <li>
+        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div><div class="t">Sacramento Chapter Lead, the AI Collective</div><div class="s">Hosting the region's AI events and workshops</div></div>
+      </li>
+      <li>
+        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div><div class="t">n8n Ambassador</div><div class="s">Recognized for automation systems expertise</div></div>
+      </li>
+      <li>
+        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div><div class="t">Pursuing an MIT AI leadership certificate</div><div class="s">Applied AI strategy for organizations</div></div>
+      </li>
+      <li>
+        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div><div class="t">A regular publisher on AI for local business</div><div class="s">Across LinkedIn and our knowledge base</div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ OUTCOMES ============ -->
+<section id="outcomes" class="outcomes">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Outcomes</div>
+      <h2>What Sacramento owners get</h2>
+    </div>
+    <div class="out-grid">
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>More leads captured, fewer opportunities missed</p>
+      </div>
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Hours saved every week on manual admin and follow-up</p>
+      </div>
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Clear visibility into what AI is doing across your business</p>
+      </div>
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>A team that feels supported by automation, not replaced by it</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Questions Sacramento owners ask</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">How much does AI automation cost for a Sacramento small business?<span class="pm"></span></button>
+        <div class="faq-a"><p>It depends on scope, but most engagements start with a focused discovery process and a prioritized plan, so you invest in the highest-value workflows first rather than paying for a large build up front. Book a discovery call for a specific estimate.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What tools do you build with?<span class="pm"></span></button>
+        <div class="faq-a"><p>We build inside the tools you already use and specialize in n8n for automation, connected to your CRM, inbox, scheduling, and communication platforms. Jesse is a recognized n8n Ambassador.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do you keep AI use compliant with California regulations?<span class="pm"></span></button>
+        <div class="faq-a"><p>Every workflow ships with documentation, human oversight, and clear guardrails around privacy and data handling, so you can adopt AI confidently while respecting industry compliance and California requirements.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long until we see results?<span class="pm"></span></button>
+        <div class="faq-a"><p>Quick-win automations often go live within the first few weeks of an engagement, with deeper workflow systems rolled out and refined over the following months.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you work with businesses outside Sacramento?<span class="pm"></span></button>
+        <div class="faq-a"><p>Yes—we serve the greater Sacramento region including Roseville, Elk Grove, Folsom, Rancho Cordova, Davis, and Rocklin.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="final" class="final">
+  <div class="wrap">
+    <div class="eyebrow">Get started</div>
+    <h2>Get your Sacramento AI automation plan</h2>
+    <p>If you're ready to stop guessing about AI and start using practical automation, we'll help you take the next step—without risking your reputation or overwhelming your staff.</p>
+    <div class="final-actions">
+      <a href="#" class="btn btn-teal">Get Your Sacramento AI Workflow Plan <span class="arw">→</span></a>
+      <a href="#" class="btn btn-ghost">Book a 20-Minute Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="logo"><span class="mark"><span>S</span></span>SimpleTen</a>
+        <p>AI Automation Company in Sacramento, California. Practical AI workflows in the tools you already use.</p>
+        <div class="partner">In partnership with AI Collective Sacramento</div>
+      </div>
+      <div class="foot-nap">
+        <span class="lbl">Contact</span>
+        <span><b>Address</b> · [Address]</span>
+        <span><b>Phone</b> · [Phone]</span>
+        <span><b>Email</b> · [Email]</span>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>© 2026 SimpleTen · AI Automation Company in Sacramento</p>
+      <p class="region">Serving Sacramento, Roseville, Elk Grove, Folsom, Rancho Cordova, Davis &amp; Rocklin</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nav=document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement, ans=item.querySelector('.faq-a'), isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
+      if(!isOpen){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+    });
+  });
+</script>
+
+</body>
+</html>
