@@ -32,6 +32,12 @@
     --ink:#e2e8f0;         /* slate-200 */
     --body:#94a3b8;        /* slate-400 */
     --muted:#64748b;       /* slate-500 */
+    /* Light-section palette (white bg) */
+    --teal-600:#0d9488;    /* teal on white — links/accents */
+    --l-head:#0f172a;      /* slate-900 headings on white */
+    --l-body:#475569;      /* slate-600 body on white */
+    --l-muted:#64748b;     /* slate-500 */
+    --l-border:#e2e8f0;    /* slate-200 borders on white */
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
@@ -134,12 +140,12 @@
   .sec-head p{font-size:19px;font-weight:460;color:var(--body);line-height:1.5}
 
   /* ---------- Answer block ---------- */
-  .answer{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .answer{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border)}
   .answer .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
-  .answer .q{font-size:34px;font-weight:460;letter-spacing:-.9px;line-height:1.05;color:#fff}
+  .answer .q{font-size:34px;font-weight:460;letter-spacing:-.9px;line-height:1.05;color:var(--l-head)}
   .answer .q .bar{display:block;width:48px;height:4px;border-radius:8px;background:var(--teal);margin-bottom:24px}
-  .answer .a{font-size:22px;font-weight:460;line-height:1.5;color:var(--ink)}
-  .answer .a b{font-weight:600;color:#fff}
+  .answer .a{font-size:22px;font-weight:460;line-height:1.5;color:var(--l-body)}
+  .answer .a b{font-weight:600;color:var(--l-head)}
 
   /* ---------- Cards grid ---------- */
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -168,15 +174,19 @@
   .svc .lnk .arw{transition:transform .15s}
   .svc:hover .lnk .arw{transform:translateX(3px)}
 
-  /* ---------- Process ---------- */
+  /* ---------- Process (white section) ---------- */
+  #process{background:#fff}
+  #process .eyebrow{color:var(--teal-600)}
+  #process .sec-head h2{color:var(--l-head)}
+  #process .sec-head p{color:var(--l-body)}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;counter-reset:step}
   .step{position:relative}
-  .step .top{height:3px;background:var(--border);border-radius:8px;margin-bottom:26px;position:relative}
-  .step .top:after{content:"";position:absolute;left:0;top:0;width:40px;height:3px;background:var(--teal);border-radius:8px;box-shadow:0 0 12px 0 rgba(20,184,166,.6)}
-  .step .num{counter-increment:step;font-size:15px;font-weight:700;color:var(--teal-400);letter-spacing:.02em}
+  .step .top{height:3px;background:var(--l-border);border-radius:8px;margin-bottom:26px;position:relative}
+  .step .top:after{content:"";position:absolute;left:0;top:0;width:40px;height:3px;background:var(--teal);border-radius:8px}
+  .step .num{counter-increment:step;font-size:15px;font-weight:700;color:var(--teal-600);letter-spacing:.02em}
   .step .num:before{content:"0" counter(step)}
-  .step h3{font-size:23px;font-weight:540;letter-spacing:-.5px;line-height:1.1;margin:12px 0 12px;color:#fff}
-  .step p{font-size:16px;font-weight:460;color:var(--body);line-height:1.55}
+  .step h3{font-size:23px;font-weight:540;letter-spacing:-.5px;line-height:1.1;margin:12px 0 12px;color:var(--l-head)}
+  .step p{font-size:16px;font-weight:460;color:var(--l-body);line-height:1.55}
 
   /* ---------- Authority ---------- */
   .authority{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -203,19 +213,21 @@
   .out .ck svg{width:17px;height:17px;color:var(--teal-300)}
   .out p{font-size:16px;font-weight:540;color:var(--ink);line-height:1.35}
 
-  /* ---------- FAQ ---------- */
-  .faq{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .faq-list{max-width:860px;margin:0 auto;border-top:1px solid var(--border)}
-  .faq-item{border-bottom:1px solid var(--border)}
-  .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:30px 4px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:inherit;font-size:21px;font-weight:540;color:var(--white);letter-spacing:-.4px;line-height:1.2}
-  .faq-q:hover{color:var(--teal-400)}
+  /* ---------- FAQ (white section) ---------- */
+  .faq{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border)}
+  .faq .eyebrow{color:var(--teal-600)}
+  .faq .sec-head h2{color:var(--l-head)}
+  .faq-list{max-width:860px;margin:0 auto;border-top:1px solid var(--l-border)}
+  .faq-item{border-bottom:1px solid var(--l-border)}
+  .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:30px 4px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:inherit;font-size:21px;font-weight:540;color:var(--l-head);letter-spacing:-.4px;line-height:1.2}
+  .faq-q:hover{color:var(--teal-600)}
   .faq-q .pm{width:24px;height:24px;flex-shrink:0;position:relative}
-  .faq-q .pm:before,.faq-q .pm:after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--teal-400);border-radius:8px}
+  .faq-q .pm:before,.faq-q .pm:after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--teal-600);border-radius:8px}
   .faq-q .pm:before{width:15px;height:2px}
   .faq-q .pm:after{width:2px;height:15px;transition:transform .25s ease}
   .faq-item.open .pm:after{transform:translate(-50%,-50%) scaleY(0)}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
-  .faq-a p{font-size:17px;font-weight:460;color:var(--body);line-height:1.6;padding:0 4px 30px;max-width:760px}
+  .faq-a p{font-size:17px;font-weight:460;color:var(--l-body);line-height:1.6;padding:0 4px 30px;max-width:760px}
 
   /* ---------- Final CTA ---------- */
   .final{
