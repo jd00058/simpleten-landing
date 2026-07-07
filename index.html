@@ -247,7 +247,16 @@
   .svc:hover .lnk .arw{transform:translateX(3px)}
 
   /* ---------- Process (white section) ---------- */
-  #process{background:#fff}
+  #process{background:#fff;position:relative;overflow:hidden}
+  #process .bridge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    height:132%;width:auto;max-width:none;display:block;pointer-events:none;user-select:none;
+    opacity:.08;
+    filter:drop-shadow(0 0 22px rgba(20,184,166,.35));
+    animation:skyline-glow 7s ease-in-out infinite;
+  }
+  @media(prefers-reduced-motion:reduce){#process .bridge{animation:none}}
+  #process .wrap{position:relative;z-index:1}
   #process .eyebrow{color:var(--teal-600)}
   #process .sec-head h2{color:var(--l-head)}
   #process .sec-head p{color:var(--l-body)}
@@ -568,6 +577,7 @@
 
 <!-- ============ PROCESS ============ -->
 <section id="process">
+  <img class="bridge" src="bridge-paint.webp" alt="" aria-hidden="true" loading="lazy" onerror="this.style.display='none'">
   <div class="wrap">
     <div class="sec-head center">
       <div class="eyebrow">How it works</div>
