@@ -272,19 +272,41 @@
 
   /* ---------- Authority ---------- */
   .authority{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .authority .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-  .authority h2{font-size:46px;letter-spacing:-1.3px;line-height:1.0;font-weight:460;margin:18px 0 22px;color:#fff}
-  .authority p.lead{font-size:19px;font-weight:460;color:var(--body);line-height:1.55;margin-bottom:30px}
+  .authority .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+  .authority h2{font-size:42px;letter-spacing:-1.3px;line-height:1.02;font-weight:460;margin:20px 0 20px;color:#fff}
+  .authority p.lead{font-size:17px;font-weight:460;color:var(--body);line-height:1.55;margin-bottom:18px}
   .authority p.lead b{color:#fff;font-weight:600}
-  .authority .aside-cta a{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:var(--teal-400);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+  .authority .aside-cta{margin-top:8px}
+  .authority .aside-cta a{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--teal-400);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
   .authority .aside-cta a:hover{color:var(--teal-300)}
-  .creds{list-style:none;display:flex;flex-direction:column;gap:14px}
-  .creds li{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;transition:border-color .2s}
-  .creds li:hover{border-color:var(--teal)}
-  .creds li .ck{width:26px;height:26px;border-radius:8px;flex-shrink:0;margin-top:1px;background:var(--teal);display:flex;align-items:center;justify-content:center}
-  .creds li .ck svg{width:14px;height:14px}
-  .creds li div .t{font-size:16px;font-weight:600;color:var(--white);line-height:1.3}
-  .creds li div .s{font-size:14px;font-weight:460;color:var(--muted);margin-top:3px}
+  /* pill badge */
+  .a-pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border-2);background:rgba(20,184,166,.08);border-radius:999px;padding:5px 6px 5px 14px}
+  .a-pill > span:first-child{font-size:13px;color:var(--ink);font-weight:460}
+  .a-pill .a-pill-ic{width:22px;height:22px;border-radius:50%;background:rgba(20,184,166,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .a-pill .a-pill-ic svg{width:12px;height:12px;color:var(--teal-300)}
+  /* image grid */
+  .auth-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .acard{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--border);min-height:272px;background:var(--surface)}
+  .acard.wide{grid-column:1/-1;min-height:200px}
+  .acard-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .acard-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 20%,rgba(20,184,166,.16),transparent 60%)}
+  .acard-bg svg{width:118px;height:118px;position:relative;z-index:1;transition:transform .4s ease}
+  .acard:hover .acard-bg svg{transform:scale(1.06)}
+  .acard-bg.ai{background:linear-gradient(150deg,#0f3b38,#0b1322)}
+  .acard-bg.ai svg{color:rgba(94,234,212,.4)}
+  .acard-bg.n8n{background:linear-gradient(150deg,#123b4a,#0b1322)}
+  .acard-bg.n8n svg{color:rgba(45,212,191,.42)}
+  .acard-bg.mit{background:linear-gradient(120deg,#0f3b38,#101c3a)}
+  .acard-bg.mit svg{color:rgba(94,234,212,.38)}
+  .acard-tag{position:absolute;top:14px;left:14px;z-index:3;display:inline-flex;align-items:center;gap:5px;background:rgba(2,6,23,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:999px;padding:5px 11px;font-size:11px;font-weight:500;color:var(--teal-300)}
+  .acard-tag svg{width:12px;height:12px}
+  .acard-cap{position:absolute;left:0;right:0;bottom:0;padding:14px;z-index:2}
+  .acard-cap .capbox{background:rgba(2,6,23,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:14px;padding:12px 15px}
+  .acard-cap .capbox.row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .acard-cap .t{font-size:14px;font-weight:600;color:#fff;line-height:1.25}
+  .acard-cap .s{font-size:12px;font-weight:460;color:var(--body);margin-top:3px;line-height:1.4}
+  .acard-ibtn{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.3);display:flex;align-items:center;justify-content:center;color:var(--teal-300)}
+  .acard-ibtn svg{width:17px;height:17px}
 
   /* ---------- Outcomes ---------- */
   .outcomes{border-top:1px solid var(--border)}
@@ -369,6 +391,9 @@
     .grid-4,.svc-grid,.steps,.out-grid{grid-template-columns:1fr}
     .svc:last-child{grid-column:auto}
     .foot-bot .region{text-align:left}
+    .authority h2{font-size:33px;letter-spacing:-.8px}
+    .auth-grid{grid-template-columns:1fr}
+    .acard{min-height:220px}
   }
 </style>
 </head>
@@ -613,36 +638,33 @@
 <!-- ============ AUTHORITY ============ -->
 <section id="authority" class="authority">
   <div class="wrap">
-    <div>
-      <div class="eyebrow">Why SimpleTen</div>
+    <div class="auth-left">
+      <div class="a-pill"><span>Sacramento AI &amp; automation leaders</span><span class="a-pill-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
       <h2>Leaders in the Sacramento AI and Automation Industry</h2>
       <p class="lead">SimpleTen brings together AI strategy, automation expertise, marketing experience, and a trusted technical network to help service businesses modernize with confidence.</p>
       <p class="lead">We run Sacramento's largest monthly AI meetup through the globally recognized <b>AI Collective</b>, serve as <b>n8n ambassadors</b>, and work alongside developers, engineers, and data specialists to build practical systems that actually work.</p>
       <p class="lead">With experience in marketing, creative direction, advertising, and <b>MIT-certified training in Applied Agentic AI for Organizational Transformation</b>, we help businesses use AI where it creates real value — not just because it's AI.</p>
       <div class="aside-cta"><a href="#">See upcoming AI Collective Sacramento events →</a></div>
     </div>
-    <ul class="creds">
-      <li>
-        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <div><div class="t">AI Collective</div><div class="s">Sacramento's largest monthly AI meetup — globally recognized</div></div>
-      </li>
-      <li>
-        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <div><div class="t">n8n Ambassadors</div><div class="s">Recognized automation systems expertise</div></div>
-      </li>
-      <li>
-        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <div><div class="t">MIT-Certified</div><div class="s">Applied Agentic AI for Organizational Transformation</div></div>
-      </li>
-      <li>
-        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <div><div class="t">Trusted Technical Network</div><div class="s">Developers, engineers &amp; data specialists</div></div>
-      </li>
-      <li>
-        <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#022c22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <div><div class="t">Marketing &amp; Creative</div><div class="s">Creative direction, advertising &amp; brand strategy</div></div>
-      </li>
-    </ul>
+
+    <div class="auth-grid">
+      <!-- AI Collective -->
+      <div class="acard">
+        <div class="acard-bg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="acard-cap"><div class="capbox"><p class="t">AI Collective</p><p class="s">Sacramento's largest monthly AI meetup — globally recognized.</p></div></div>
+      </div>
+      <!-- n8n Ambassador -->
+      <div class="acard">
+        <span class="acard-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ambassador</span>
+        <div class="acard-bg n8n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div>
+        <div class="acard-cap"><div class="capbox"><p class="t">n8n Ambassador</p><p class="s">Recognized automation systems expertise.</p></div></div>
+      </div>
+      <!-- MIT Certified -->
+      <div class="acard wide">
+        <div class="acard-bg mit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+        <div class="acard-cap"><div class="capbox row"><div><p class="t">MIT-Certified Agentic Orchestration</p><p class="s">Applied Agentic AI for Organizational Transformation.</p></div><span class="acard-ibtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></span></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
