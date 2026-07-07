@@ -323,7 +323,16 @@
   .out p{font-size:16px;font-weight:540;color:var(--l-head);line-height:1.35}
 
   /* ---------- FAQ (white section) ---------- */
-  .faq{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border)}
+  .faq{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border);position:relative;overflow:hidden}
+  .faq .faqbridge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    height:132%;width:auto;max-width:none;display:block;pointer-events:none;user-select:none;
+    opacity:.08;
+    filter:drop-shadow(0 0 22px rgba(20,184,166,.35));
+    animation:skyline-glow 7s ease-in-out infinite;
+  }
+  @media(prefers-reduced-motion:reduce){.faq .faqbridge{animation:none}}
+  .faq .wrap{position:relative;z-index:1}
   .faq .eyebrow{color:var(--teal-600)}
   .faq .sec-head h2{color:var(--l-head)}
   .faq-list{max-width:860px;margin:0 auto;border-top:1px solid var(--l-border)}
@@ -704,6 +713,7 @@
 
 <!-- ============ FAQ ============ -->
 <section id="faq" class="faq">
+  <img class="faqbridge" src="faq-bridge.webp" alt="" aria-hidden="true" loading="lazy" onerror="this.style.display='none'">
   <div class="wrap">
     <div class="sec-head center">
       <div class="eyebrow">FAQ</div>
