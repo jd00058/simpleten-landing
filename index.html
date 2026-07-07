@@ -175,13 +175,57 @@
   .answer .a{font-size:22px;font-weight:460;line-height:1.5;color:var(--l-body)}
   .answer .a b{font-weight:600;color:var(--l-head)}
 
-  /* ---------- Cards grid ---------- */
-  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .fcard{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px 30px;transition:border-color .2s ease,transform .2s ease,box-shadow .2s}
-  .fcard:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 20px 50px -24px rgba(20,184,166,.45)}
-  .fcard .mk{width:12px;height:12px;border-radius:8px;background:var(--teal);margin-bottom:22px;box-shadow:0 0 12px 1px rgba(20,184,166,.6)}
-  .fcard h3{font-size:21px;font-weight:540;letter-spacing:-.4px;line-height:1.1;margin-bottom:11px;color:#fff}
-  .fcard p{font-size:16px;font-weight:460;color:var(--body);line-height:1.5}
+  /* ---------- Who-we-serve — boxed panel ---------- */
+  .serve-box{position:relative;overflow:hidden;background:#0f172a;border:1px solid var(--border);border-radius:28px;padding:44px}
+  .serve-lines{position:absolute;inset:0;opacity:.10;pointer-events:none}
+  .serve-lines i{position:absolute;display:block}
+  .serve-lines .h{left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#475569,transparent)}
+  .serve-lines .h1{top:25%}
+  .serve-lines .h2{top:75%}
+  .serve-lines .v{top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,#475569,transparent)}
+  .serve-lines .v1{left:33.33%}
+  .serve-lines .v2{right:33.33%}
+  .serve-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:stretch}
+  .serve-left{display:flex;flex-direction:column;justify-content:space-between}
+  .serve-h{font-size:44px;line-height:.96;letter-spacing:-1.5px;font-weight:540;color:#fff;margin-top:12px}
+  .serve-markers{margin-top:30px;position:relative}
+  .serve-markers .rule{position:absolute;inset:0;display:flex;align-items:center}
+  .serve-markers .rule span{width:100%;height:1px;background:linear-gradient(90deg,var(--border),#334155,var(--border))}
+  .serve-markers .tags{position:relative;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:22px}
+  .serve-markers .tag{display:inline-flex;align-items:center;gap:7px;background:#0f172a;padding-right:12px;color:var(--body);font-size:13px;font-weight:460;white-space:nowrap}
+  .serve-markers .tag svg{width:15px;height:15px;color:var(--teal-400);flex-shrink:0}
+  .serve-foot{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .serve-foot .lead{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:-.2px;line-height:1.35}
+  .serve-foot .sup{margin-top:7px;font-size:14px;color:var(--body);line-height:1.5}
+  .serve-foot .btn{margin-top:18px}
+  .serve-foot .divcol{position:relative;padding-left:30px;display:flex;align-items:center}
+  .serve-foot .divcol:before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--border-2),transparent)}
+  .serve-foot .divcol p{font-size:15px;color:var(--ink);line-height:1.6;text-align:right}
+  .serve-foot .divcol p b{color:#fff;font-weight:600}
+  /* Right tiles */
+  .serve-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .serve-card{position:relative;overflow:hidden;min-height:210px;background:linear-gradient(152deg,#1b2b47,#0c1424);border:1px solid var(--border);border-radius:18px;padding:18px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .serve-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 22px 46px -24px rgba(20,184,166,.5)}
+  .serve-card .sc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:auto}
+  .serve-card .sc-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.3);color:var(--teal-300);flex-shrink:0}
+  .serve-card .sc-icon svg{width:17px;height:17px}
+  .serve-card .sc-pill{padding:4px 9px;border-radius:7px;background:rgba(2,6,23,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid var(--border);font-size:11px;font-weight:500;color:var(--body);white-space:nowrap}
+  .serve-card .sc-title{font-size:19px;font-weight:540;letter-spacing:-.3px;color:#fff;margin-top:16px}
+  .serve-card .sc-desc{font-size:13px;font-weight:460;color:var(--body);line-height:1.5;margin-top:7px}
+  @media(max-width:960px){
+    .serve-grid{grid-template-columns:1fr;gap:38px}
+    .serve-foot .divcol{padding-left:0}
+    .serve-foot .divcol:before{display:none}
+    .serve-foot .divcol p{text-align:left}
+  }
+  @media(max-width:680px){
+    .serve-box{padding:24px;border-radius:22px}
+    .serve-h{font-size:33px;letter-spacing:-1px}
+    .serve-markers{display:none}
+    .serve-foot{grid-template-columns:1fr;gap:22px}
+    .serve-cards{grid-template-columns:1fr}
+    .serve-card{min-height:auto}
+  }
 
   /* ---------- Services ---------- */
   .services{position:relative;overflow:hidden;background:
@@ -401,31 +445,69 @@
 <!-- ============ WHO WE SERVE ============ -->
 <section id="serve">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Who we serve</div>
-      <h2>Built For Service-Based Businesses</h2>
-      <p>We work with Sacramento-area service businesses—home services, professional practices, real estate teams, clinics, agencies, and local nonprofits—that grow through calls, forms, and referrals. Instead of generic "AI" promises, we build specific workflows around how your business actually runs.</p>
-    </div>
-    <div class="grid-4">
-      <div class="fcard">
-        <div class="mk"></div>
-        <h3>Operations</h3>
-        <p>Automate the admin work that slows your team down — intake, scheduling, task routing, reminders, and internal updates.</p>
-      </div>
-      <div class="fcard">
-        <div class="mk"></div>
-        <h3>Sales</h3>
-        <p>Capture, qualify, and follow up with every lead automatically, so more opportunities turn into booked calls and closed deals.</p>
-      </div>
-      <div class="fcard">
-        <div class="mk"></div>
-        <h3>Marketing</h3>
-        <p>Stay visible with workflows that support content, campaigns, follow-ups, repurposing, and audience nurturing.</p>
-      </div>
-      <div class="fcard">
-        <div class="mk"></div>
-        <h3>Data</h3>
-        <p>Turn scattered information into organized systems your team can actually use for reporting, insights, decisions, and automation.</p>
+    <div class="serve-box">
+      <div class="serve-lines"><i class="h h1"></i><i class="h h2"></i><i class="v v1"></i><i class="v v2"></i></div>
+      <div class="serve-grid">
+        <!-- Left: heading + copy -->
+        <div class="serve-left">
+          <div>
+            <div class="eyebrow">Who we serve</div>
+            <h2 class="serve-h">Built For Service-Based Businesses</h2>
+            <div class="serve-markers">
+              <div class="rule"><span></span></div>
+              <div class="tags">
+                <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Practical, not hype</span>
+                <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Works in your tools</span>
+                <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Human oversight</span>
+              </div>
+            </div>
+          </div>
+          <div class="serve-foot">
+            <div>
+              <p class="lead">Businesses that grow through calls, forms &amp; referrals.</p>
+              <p class="sup">Home services, professional practices, real estate teams, clinics, agencies, and local nonprofits.</p>
+              <a href="#final" class="btn btn-teal">Book a Discovery Call <span class="arw">→</span></a>
+            </div>
+            <div class="divcol">
+              <p>Instead of generic “AI” promises, we build <b>specific workflows</b> around your staff, your tools, and your customers.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Right: pillar tiles -->
+        <div class="serve-cards">
+          <article class="serve-card">
+            <div class="sc-top">
+              <span class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg></span>
+              <span class="sc-pill">Admin &amp; Team</span>
+            </div>
+            <div class="sc-title">Operations</div>
+            <p class="sc-desc">Automate the admin work that slows your team down — intake, scheduling, task routing, reminders, and internal updates.</p>
+          </article>
+          <article class="serve-card">
+            <div class="sc-top">
+              <span class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
+              <span class="sc-pill">Revenue</span>
+            </div>
+            <div class="sc-title">Sales</div>
+            <p class="sc-desc">Capture, qualify, and follow up with every lead automatically, so more opportunities turn into booked calls and closed deals.</p>
+          </article>
+          <article class="serve-card">
+            <div class="sc-top">
+              <span class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+              <span class="sc-pill">Growth</span>
+            </div>
+            <div class="sc-title">Marketing</div>
+            <p class="sc-desc">Stay visible with workflows that support content, campaigns, follow-ups, repurposing, and audience nurturing.</p>
+          </article>
+          <article class="serve-card">
+            <div class="sc-top">
+              <span class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></span>
+              <span class="sc-pill">Systems</span>
+            </div>
+            <div class="sc-title">Data</div>
+            <p class="sc-desc">Turn scattered information into organized systems your team can actually use for reporting, insights, decisions, and automation.</p>
+          </article>
+        </div>
       </div>
     </div>
   </div>
