@@ -103,8 +103,17 @@
   .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:28px}
   .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-400);box-shadow:0 0 14px 1px rgba(45,212,191,.9)}
   .hero-eyebrow span{font-size:15px;font-weight:460;color:var(--ink)}
-  .hero h1{font-size:66px;line-height:.96;letter-spacing:-1.6px;font-weight:540;color:#fff;margin-bottom:26px}
+  .hero h1{font-size:58px;line-height:1.0;letter-spacing:-1.4px;font-weight:540;color:#fff;margin-bottom:26px}
   .hero h1 .lav{background:linear-gradient(100deg,var(--teal-300),var(--teal-400) 45%,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  /* Animated industry flip */
+  .flip{display:inline-block;perspective:600px;vertical-align:baseline}
+  .flip-inner{
+    display:inline-block;white-space:nowrap;transform-origin:50% 54%;backface-visibility:hidden;
+    transition:transform .36s cubic-bezier(.2,.7,.25,1),opacity .36s ease;
+    background:linear-gradient(100deg,var(--teal-300),var(--teal-400) 45%,var(--cyan));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  @media(prefers-reduced-motion:reduce){.flip-inner{transition:opacity .3s ease}}
   .hero p.sub{font-size:20px;line-height:1.5;font-weight:460;color:var(--body);max-width:520px;margin-bottom:38px}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
   .hero-note{font-size:15px;font-weight:460;color:var(--muted);display:flex;align-items:center;gap:8px;line-height:1.5}
@@ -317,7 +326,7 @@
   <div class="wrap">
     <div class="hero-copy">
       <div class="hero-eyebrow"><span class="dot"></span><span>AI Automation Company · Sacramento, California</span></div>
-      <h1>AI automation<br>for Sacramento,<br><span class="lav">built to run.</span></h1>
+      <h1>Helping <span class="flip" aria-live="polite"><span class="flip-inner">Lawyers</span></span><br>Save Time<br>and Make Money</h1>
       <p class="sub">SimpleTen designs and builds practical AI workflows for Sacramento small businesses—automating the busywork so your team moves faster, follows up sooner, and captures more revenue, without hiring a tech department.</p>
       <div class="hero-actions">
         <a href="#final" class="btn btn-teal">Get Your Sacramento AI Workflow Plan <span class="arw">→</span></a>
@@ -607,6 +616,31 @@
   var nav=document.getElementById('nav');
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
   onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Animated industry flip
+  (function(){
+    var words=['Lawyers','Dentists','HVAC','Landscapers','Med Spas'];
+    var inner=document.querySelector('.flip-inner');
+    if(!inner) return;
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var i=0;
+    setInterval(function(){
+      inner.style.opacity='0';
+      if(!reduce) inner.style.transform='rotateX(-90deg)';
+      setTimeout(function(){
+        i=(i+1)%words.length;
+        inner.textContent=words[i];
+        if(!reduce){
+          inner.style.transition='none';
+          inner.style.transform='rotateX(90deg)';
+          inner.offsetHeight;                 // force reflow
+          inner.style.transition='';
+          inner.style.transform='rotateX(0deg)';
+        }
+        inner.style.opacity='1';
+      }, reduce?200:360);
+    }, 2400);
+  })();
 
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click',function(){
