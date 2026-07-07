@@ -303,13 +303,15 @@
   .acard-ibtn svg{width:17px;height:17px}
 
   /* ---------- Outcomes ---------- */
-  .outcomes{border-top:1px solid var(--border)}
+  .outcomes{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border)}
+  .outcomes .eyebrow{color:var(--teal-600)}
+  .outcomes .sec-head h2{color:var(--l-head)}
   .out-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .out{border:1px solid var(--border);border-radius:16px;padding:28px 26px;background:var(--surface);transition:border-color .2s,transform .2s,box-shadow .2s}
-  .out:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 18px 44px -24px rgba(20,184,166,.45)}
-  .out .ck{width:34px;height:34px;border-radius:8px;background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.3);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-  .out .ck svg{width:17px;height:17px;color:var(--teal-300)}
-  .out p{font-size:16px;font-weight:540;color:var(--ink);line-height:1.35}
+  .out{border:1px solid var(--l-border);border-radius:16px;padding:28px 26px;background:#fff;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .out:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 18px 44px -24px rgba(20,184,166,.25)}
+  .out .ck{width:34px;height:34px;border-radius:8px;background:rgba(20,184,166,.14);border:1px solid rgba(20,184,166,.3);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .out .ck svg{width:17px;height:17px;color:var(--teal-600)}
+  .out p{font-size:16px;font-weight:540;color:var(--l-head);line-height:1.35}
 
   /* ---------- FAQ (white section) ---------- */
   .faq{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border)}
@@ -541,6 +543,34 @@
   </div>
 </section>
 
+<!-- ============ OUTCOMES ============ -->
+<section id="outcomes" class="outcomes">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Outcomes</div>
+      <h2>What Sacramento owners get</h2>
+    </div>
+    <div class="out-grid">
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>More leads captured, fewer opportunities missed</p>
+      </div>
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Hours saved every week on manual admin and follow-up</p>
+      </div>
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Clear visibility into what AI is doing across your business</p>
+      </div>
+      <div class="out">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>A team that feels supported by automation, not replaced by it</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SERVICES ============ -->
 <section id="services" class="services">
   <div class="wrap">
@@ -657,34 +687,6 @@
       <div class="acard wide">
         <div class="acard-bg"><img src="cred-mit.webp" alt="Agentic AI orchestration" loading="lazy"></div>
         <div class="acard-cap"><div class="capbox row"><div><p class="t">MIT-Certified Agentic Orchestration</p><p class="s">Applied Agentic AI for Organizational Transformation.</p></div><span class="acard-ibtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OUTCOMES ============ -->
-<section id="outcomes" class="outcomes">
-  <div class="wrap">
-    <div class="sec-head center">
-      <div class="eyebrow">Outcomes</div>
-      <h2>What Sacramento owners get</h2>
-    </div>
-    <div class="out-grid">
-      <div class="out">
-        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <p>More leads captured, fewer opportunities missed</p>
-      </div>
-      <div class="out">
-        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <p>Hours saved every week on manual admin and follow-up</p>
-      </div>
-      <div class="out">
-        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <p>Clear visibility into what AI is doing across your business</p>
-      </div>
-      <div class="out">
-        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <p>A team that feels supported by automation, not replaced by it</p>
       </div>
     </div>
   </div>
