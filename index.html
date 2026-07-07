@@ -303,7 +303,16 @@
   .acard-ibtn svg{width:17px;height:17px}
 
   /* ---------- Outcomes ---------- */
-  .outcomes{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border)}
+  .outcomes{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border);position:relative;overflow:hidden}
+  .outcomes .oldsac{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:114%;height:auto;max-width:none;display:block;pointer-events:none;user-select:none;
+    opacity:.08;
+    filter:drop-shadow(0 0 22px rgba(20,184,166,.35));
+    animation:skyline-glow 7s ease-in-out infinite;
+  }
+  @media(prefers-reduced-motion:reduce){.outcomes .oldsac{animation:none}}
+  .outcomes .wrap{position:relative;z-index:1}
   .outcomes .eyebrow{color:var(--teal-600)}
   .outcomes .sec-head h2{color:var(--l-head)}
   .out-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
@@ -545,6 +554,7 @@
 
 <!-- ============ OUTCOMES ============ -->
 <section id="outcomes" class="outcomes">
+  <img class="oldsac" src="oldsac.webp" alt="" aria-hidden="true" loading="lazy" onerror="this.style.display='none'">
   <div class="wrap">
     <div class="sec-head center">
       <div class="eyebrow">Outcomes</div>
