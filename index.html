@@ -288,16 +288,10 @@
   .auth-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .acard{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--border);min-height:272px;background:var(--surface)}
   .acard.wide{grid-column:1/-1;min-height:200px}
-  .acard-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .acard-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 20%,rgba(20,184,166,.16),transparent 60%)}
-  .acard-bg svg{width:118px;height:118px;position:relative;z-index:1;transition:transform .4s ease}
-  .acard:hover .acard-bg svg{transform:scale(1.06)}
-  .acard-bg.ai{background:linear-gradient(150deg,#0f3b38,#0b1322)}
-  .acard-bg.ai svg{color:rgba(94,234,212,.4)}
-  .acard-bg.n8n{background:linear-gradient(150deg,#123b4a,#0b1322)}
-  .acard-bg.n8n svg{color:rgba(45,212,191,.42)}
-  .acard-bg.mit{background:linear-gradient(120deg,#0f3b38,#101c3a)}
-  .acard-bg.mit svg{color:rgba(94,234,212,.38)}
+  .acard-bg{position:absolute;inset:0;overflow:hidden;background:#0b1322}
+  .acard-bg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .acard:hover .acard-bg img{transform:scale(1.05)}
+  .acard-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,23,.05) 0%,rgba(2,6,23,.12) 42%,rgba(2,6,23,.82) 100%)}
   .acard-tag{position:absolute;top:14px;left:14px;z-index:3;display:inline-flex;align-items:center;gap:5px;background:rgba(2,6,23,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:999px;padding:5px 11px;font-size:11px;font-weight:500;color:var(--teal-300)}
   .acard-tag svg{width:12px;height:12px}
   .acard-cap{position:absolute;left:0;right:0;bottom:0;padding:14px;z-index:2}
@@ -650,18 +644,18 @@
     <div class="auth-grid">
       <!-- AI Collective -->
       <div class="acard">
-        <div class="acard-bg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="acard-bg"><img src="cred-ai.webp" alt="Sacramento AI Collective meetup" loading="lazy"></div>
         <div class="acard-cap"><div class="capbox"><p class="t">AI Collective</p><p class="s">Sacramento's largest monthly AI meetup — globally recognized.</p></div></div>
       </div>
       <!-- n8n Ambassador -->
       <div class="acard">
         <span class="acard-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ambassador</span>
-        <div class="acard-bg n8n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div>
+        <div class="acard-bg"><img src="cred-n8n.webp" alt="Automation workflow network" loading="lazy"></div>
         <div class="acard-cap"><div class="capbox"><p class="t">n8n Ambassador</p><p class="s">Recognized automation systems expertise.</p></div></div>
       </div>
       <!-- MIT Certified -->
       <div class="acard wide">
-        <div class="acard-bg mit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+        <div class="acard-bg"><img src="cred-mit.webp" alt="Agentic AI orchestration" loading="lazy"></div>
         <div class="acard-cap"><div class="capbox row"><div><p class="t">MIT-Certified Agentic Orchestration</p><p class="s">Applied Agentic AI for Organizational Transformation.</p></div><span class="acard-ibtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></span></div></div>
       </div>
     </div>
