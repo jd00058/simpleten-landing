@@ -151,8 +151,26 @@
   .sec-head p{font-size:19px;font-weight:460;color:var(--body);line-height:1.5}
 
   /* ---------- Answer block ---------- */
-  .answer{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border)}
-  .answer .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+  .answer{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border);position:relative;overflow:hidden;padding-bottom:150px}
+  .answer .skyline{
+    position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);
+    width:min(1400px,110%);max-width:none;display:block;pointer-events:none;user-select:none;
+    opacity:.16;
+    filter:drop-shadow(0 0 22px rgba(20,184,166,.35));
+    animation:skyline-glow 7s ease-in-out infinite;
+  }
+  @keyframes skyline-glow{
+    0%,100%{opacity:.16;filter:drop-shadow(0 0 22px rgba(20,184,166,.35))}
+    6%{opacity:.12}
+    9%{opacity:.19}
+    11%{opacity:.14}
+    14%{opacity:.18}
+    48%{opacity:.22;filter:drop-shadow(0 0 42px rgba(20,184,166,.6))}
+    62%{opacity:.17}
+    78%{opacity:.21;filter:drop-shadow(0 0 34px rgba(20,184,166,.5))}
+  }
+  @media(prefers-reduced-motion:reduce){.answer .skyline{animation:none}}
+  .answer .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;position:relative;z-index:1}
   .answer .q{font-size:34px;font-weight:460;letter-spacing:-.9px;line-height:1.05;color:var(--l-head)}
   .answer .q .bar{display:block;width:48px;height:4px;border-radius:8px;background:var(--teal);margin-bottom:24px}
   .answer .a{font-size:22px;font-weight:460;line-height:1.5;color:var(--l-body)}
@@ -373,6 +391,7 @@
 
 <!-- ============ ANSWER BLOCK ============ -->
 <section class="answer">
+  <img class="skyline" src="sac-skyline.webp" alt="" aria-hidden="true" loading="lazy" onerror="this.style.display='none'">
   <div class="wrap">
     <div class="q"><span class="bar"></span>What is SimpleTen?</div>
     <div class="a"><b>SimpleTen is a Sacramento-based AI automation company</b> that helps small businesses design, build, and maintain AI workflows across operations, marketing, and revenue. We work inside the tools you already use, with clear safeguards and human oversight, so adopting AI feels like a straightforward upgrade rather than a risky experiment.</div>
