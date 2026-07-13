@@ -17,3 +17,9 @@ python3 -m http.server 8142
 - Footer NAP placeholders: `[Address]` / `[Phone]` / `[Email]`
 - Service and CTA links are `#` placeholders pending destination pages
 - FAQPage / LocalBusiness JSON-LD schema not yet added
+
+## Lead generation page copy
+
+A copy of the SimpleTen lead-generation page from `jd00058/website-builder-01` is included at `lead-generation.html`.
+
+Editable source snapshots are in `source/lead-generation/`.
