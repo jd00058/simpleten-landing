@@ -324,6 +324,35 @@
   .out .ck svg{width:17px;height:17px;color:var(--teal-600)}
   .out p{font-size:16px;font-weight:540;color:var(--l-head);line-height:1.35}
 
+
+  /* ---------- Blog cards ---------- */
+  .blog{position:relative;overflow:hidden;background:
+    radial-gradient(72% 70% at 50% -10%, rgba(20,184,166,.13) 0%, transparent 62%),
+    radial-gradient(52% 60% at 100% 84%, rgba(99,102,241,.10) 0%, transparent 62%),
+    var(--bg);
+    border-bottom:1px solid var(--border)}
+  .blog .wrap{position:relative;z-index:1}
+  .blog-top{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:44px}
+  .blog-top .sec-head{margin-bottom:0}
+  .blog-top .sec-head p{max-width:620px}
+  .blog-all{display:inline-flex;align-items:center;gap:8px;color:var(--teal-400);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+  .blog-all:hover{color:var(--teal-300)}
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .blog-card{display:block;overflow:hidden;border-radius:22px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+  .blog-card:hover{background:rgba(255,255,255,.06);border-color:rgba(45,212,191,.36);transform:translateY(-4px);box-shadow:0 26px 60px -32px rgba(20,184,166,.45)}
+  .blog-card-inner{padding:20px;animation:fadeSlideIn .8s ease-out both}
+  .blog-card:nth-child(1) .blog-card-inner{animation-delay:.1s}
+  .blog-card:nth-child(2) .blog-card-inner{animation-delay:.2s}
+  .blog-card:nth-child(3) .blog-card-inner{animation-delay:.3s}
+  .blog-img{position:relative;aspect-ratio:1/1;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.40);overflow:hidden}
+  .blog-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transition:filter .25s ease,transform .45s ease}
+  .blog-card:hover .blog-img img{filter:grayscale(72%);transform:scale(1.04)}
+  .blog-img:after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.10);pointer-events:none}
+  .blog-date{margin-top:18px;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(248,250,252,.50);font-weight:600}
+  .blog-card h3{margin-top:9px;font-size:21px;line-height:1.12;letter-spacing:-.55px;font-weight:540;color:#fff}
+  .blog-card p{margin-top:10px;font-size:14px;line-height:1.6;color:rgba(226,232,240,.66);font-weight:460}
+  @keyframes fadeSlideIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
   /* ---------- FAQ (white section) ---------- */
   .faq{background:#fff;border-top:1px solid var(--l-border);border-bottom:1px solid var(--l-border);position:relative;overflow:hidden}
   .faq .faqbridge{
@@ -388,6 +417,8 @@
     .hero h1{font-size:52px}
     .answer .wrap{grid-template-columns:1fr;gap:26px}
     .authority .wrap{grid-template-columns:1fr;gap:44px}
+    .blog-top{align-items:start;flex-direction:column}
+    .blog-grid{grid-template-columns:1fr 1fr}
     .grid-4{grid-template-columns:1fr 1fr}
     .out-grid{grid-template-columns:1fr 1fr}
     .sec-head h2{font-size:40px}
@@ -409,6 +440,7 @@
     .foot-bot .region{text-align:left}
     .authority h2{font-size:33px;letter-spacing:-.8px}
     .auth-grid{grid-template-columns:1fr}
+    .blog-grid{grid-template-columns:1fr}
     .acard{min-height:220px}
   }
 </style>
@@ -424,6 +456,7 @@
         <a href="#services">Services</a>
         <a href="#process">Process</a>
         <a href="#authority">Why SimpleTen</a>
+        <a href="#blog">Blog</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="nav-cta">
@@ -670,6 +703,47 @@
         <div class="acard-bg"><img src="cred-mit.webp" alt="Agentic AI orchestration" loading="lazy"></div>
         <div class="acard-cap"><div class="capbox row"><div><p class="t">MIT-Certified Agentic Orchestration</p><p class="s">Applied Agentic AI for Organizational Transformation.</p></div><span class="acard-ibtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></span></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ BLOG ============ -->
+<section id="blog" class="blog">
+  <div class="wrap">
+    <div class="blog-top">
+      <div class="sec-head">
+        <div class="eyebrow">SimpleTen Blog</div>
+        <h2>Practical AI notes for Sacramento service businesses</h2>
+        <p>Short, useful articles on automation, lead follow-up, AI agents, and the business systems that help local teams grow without adding more busywork.</p>
+      </div>
+      <a class="blog-all" href="/blog">View all posts →</a>
+    </div>
+    <div class="blog-grid">
+      <a class="blog-card" href="/blog/what-sacramento-businesses-should-automate-first">
+        <div class="blog-card-inner">
+          <div class="blog-img"><img src="1.jpg" alt="Sacramento business automation planning" loading="lazy"></div>
+          <div class="blog-date">September 13, 2026</div>
+          <h3>What Sacramento businesses should automate first</h3>
+          <p>Start with the handoffs that cost money: missed leads, repeated data entry, slow follow-up, and unclear ownership.</p>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/ai-consulting-vs-ai-automation">
+        <div class="blog-card-inner">
+          <div class="blog-img"><img src="2.jpg" alt="AI consulting and workflow automation strategy" loading="lazy"></div>
+          <div class="blog-date">September 13, 2026</div>
+          <h3>AI consulting vs. AI automation: what local teams need</h3>
+          <p>Consulting decides what should change. Automation turns the right decision into a working system your team can use.</p>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/how-much-does-ai-automation-cost-sacramento">
+        <div class="blog-card-inner">
+          <div class="blog-img"><img src="3.jpg" alt="AI automation cost planning for Sacramento businesses" loading="lazy"></div>
+          <div class="blog-date">September 13, 2026</div>
+          <h3>How much does AI automation cost in Sacramento?</h3>
+          <p>Pricing depends on workflow complexity, connected tools, data quality, testing, and the support needed after launch.</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
