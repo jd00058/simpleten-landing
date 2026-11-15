@@ -66,6 +66,20 @@
 @media(max-width:800px){.blog-top{align-items:start;flex-direction:column}.blog-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.blog-grid{grid-template-columns:1fr}.post-body p,.post-body li{font-size:17px}}
 
+/* Call button styles */
+.call-button{background:#14b8a6;color:#020617;font-weight:700;font-size:14px;min-height:44px;padding:12px 20px;border-radius:6px;transition:background .18s,transform .18s;white-space:nowrap}
+.call-button:hover{background:#2dd4bf;transform:translateY(-2px)}
+.call-button:focus-visible{outline:3px solid #56bfff;outline-offset:3px}
+.sticky-call-button{display:none}
+
+@media(max-width:800px){
+.call-button{display:none}
+.sticky-call-button{display:flex;align-items:center;justify-content:center;position:fixed;bottom:0;left:0;right:0;z-index:40;background:#14b8a6;color:#020617;font-weight:700;font-size:16px;min-height:60px;padding:16px 20px;border-top:2px solid #2dd4bf;box-shadow:0 -4px 20px rgba(0,0,0,.4);padding-bottom:calc(16px + env(safe-area-inset-bottom));transition:background .2s,transform .2s}
+.sticky-call-button:hover{background:#2dd4bf}
+.sticky-call-button:active{transform:scale(.98)}
+.sticky-call-button:focus-visible{outline:3px solid #56bfff;outline-offset:-3px}
+}
+
 /* Hero dashboard refinement */
 .hero-dashboard{border:1px solid #334155;border-radius:14px;background:linear-gradient(145deg,#0f172a,#07111f);box-shadow:0 25px 80px #0006,0 0 80px #14b8a60d;padding:24px}.hero-dashboard-top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-bottom:18px;border-bottom:1px solid #253449}.hero-dashboard-top strong{color:#fff}.hero-metric{display:grid;grid-template-columns:minmax(120px,.85fr) 1.15fr;align-items:center;gap:22px;padding:18px 0;border-bottom:1px solid #253449}.hero-metric span{font-size:12px;color:#94a3b8}.hero-metric strong{color:#fff;text-align:left}.hero-dashboard p{margin-top:24px;color:var(--mint);font-family:Manrope,sans-serif;font-size:24px;line-height:1.15;letter-spacing:-.04em}.cream .workflow,.cream .workflow p,.cream .workflow strong{color:var(--text)}.cream .workflow .mini-label,.cream .workflow-foot{color:#94a3b8}
 
